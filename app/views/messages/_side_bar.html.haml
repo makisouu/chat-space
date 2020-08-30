@@ -1,0 +1,19 @@
+.side-bar
+  .side-header
+    .side-box
+      %h3.side-box__left
+        maki
+      %ul.side-box__right
+        %li.side-box__right__icon
+          = link_to "#", class: "Contents__btn" do
+            = icon('fas', 'edit')
+        %li.side-box__right__icon
+          = link_to "#", class: "Contents__btn" do
+            = icon('fas', 'cog')
+  .side-under
+    .side-group
+      -# techーcamp
+      .side-group__name
+        テックキャンプ 
+      .side-group__messages
+        テスト１
