@@ -1,0 +1,30 @@
+.chat-main
+  .chat-header
+    .chat-left
+      .chat-left__group
+        テックキャンプ 
+      %ul.chat-left__member
+        Member : 
+        %li.chat-left__member-name
+          maki
+    .chat-right
+      =link_to "#" do
+        Edit
+  .chat-middle
+    .middle-box
+      .middle-box__info
+        .middle-box__info__name
+          maki
+        .middle-box__info__date
+          2020年08月27日 11時14分
+      .middle-box__message
+        .middle-box__message__content
+          テスト１
+  .chat-under
+    %form.under-content
+      .under-box
+        %input.under-box__left{placeholder: "type a message", type: "text"}
+        %label.under-box__btn
+          = icon('far','image',class: 'icon')
+          %input.hidden{type: 'file'}
+      %input.under-submit{type: 'submit', value: 'Send'}    
