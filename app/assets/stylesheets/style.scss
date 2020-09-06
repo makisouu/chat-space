@@ -26,8 +26,10 @@
           &__icon {
             margin-left: 5px;
             text-decoration: none;
+            font-size: 16px;
             .fas {
               color: #ffffff;
+              
             }
           }
         }
@@ -42,15 +44,18 @@
         background-color: #2f3e51;
         box-sizing: border-box;
         padding: 20px 0 40px;
-        &__name {
-          color: #ffffff;
-          font-size: 15px;
-        }
-        &__messages {
-          color: #ffffff;
-          font-size: 11px;
-          margin-top: 5px;
-        }
+        a {
+          text-decoration: none;
+          .side-group__name {
+            color: #ffffff;
+            font-size: 15px;
+          }
+          .side-group__messages {
+            color: #ffffff;
+            font-size: 11px;
+            margin-top: 5px;
+          }
+        }  
       } 
     }
   }
@@ -75,7 +80,7 @@
           font-size: 12px;
           margin-top: 15px;
           &__name {
-            padding: 0px 5px 0px 5px;
+            padding-left: 5px;
             font-size: 13px;
           }        
         }
@@ -131,44 +136,43 @@
       padding: 20px 50px 20px 40px;
       box-sizing: border-box;
       .under-content  {
-        display: flex;
-        justify-content: space-between;
-        .under-box {
-          width: 100%;
-          background-color: #fff;
-          position: relative;
-          &__left {
-            border: none;
-            height: 50px;
+        .Form {
+          display: flex;
+          .under-box {
             width: 100%;
-            padding: 0 45px 0 15px;
-            
+            background-color: #fff;
+            position: relative;
+            &__left {
+              border: none;
+              height: 50px;
+              width: 100%;
+              padding: 0 45px 0 15px;
+            }
+            &__btn {
+              height: 50px;
+              position: absolute;
+              right: 10px;
+              box-sizing: border-box;
+              .icon {
+                line-height: 50px;
+                font-size: 25px;
+              }
+              .hidden {
+                display: none;
+              }
+            }
           }
-          &__btn {
+          .under-submit {
+            background-color: #38AEF0;
+            border: none;
+            color: #fff;
+            font-size: 16px;
             height: 50px;
-            position: absolute;
-            right: 10px;
-            box-sizing: border-box;
-            .icon {
-              line-height: 50px;
-              font-size: 25px;
-            }
-            .hidden {
-              display: none;
-            }
+            margin-left: 15px;
+            padding: 0 30px;
           }
-        }
-        .under-submit {
-          background-color: #38AEF0;
-          border: none;
-          color: #fff;
-          font-size: 16px;
-          height: 50px;
-          margin-left: 15px;
-          padding: 0 30px;
-        }
+        }  
       }
     }
   }
 }
-
