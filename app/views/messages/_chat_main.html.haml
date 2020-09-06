@@ -2,29 +2,27 @@
   .chat-header
     .chat-left
       .chat-left__group
-        テックキャンプ 
+        = @group.name
       %ul.chat-left__member
-        Member : 
-        %li.chat-left__member-name
-          maki
+        Member :  
+        %li.chat-left__member__name
+          - @group.users.each do |user|
+            = user.name
+
     .chat-right
-      =link_to "#" do
+      =link_to edit_group_path(@group) do
         Edit
+
   .chat-middle
-    .middle-box
-      .middle-box__info
-        .middle-box__info__name
-          maki
-        .middle-box__info__date
-          2020年08月27日 11時14分
-      .middle-box__message
-        .middle-box__message__content
-          テスト１
+    = render @messages
+          
   .chat-under
-    %form.under-content
-      .under-box
-        %input.under-box__left{placeholder: "type a message", type: "text"}
-        %label.under-box__btn
-          = icon('far','image',class: 'icon')
-          %input.hidden{type: 'file'}
-      %input.under-submit{type: 'submit', value: 'Send'}    
+    .under-content
+      = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+        .under-box
+          = f.text_field :content, class: 'under-box__left', placeholder: 'type a message'
+          = f.label :image, class: 'under-box__btn' do
+            = icon('far', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'under-submit'
+
